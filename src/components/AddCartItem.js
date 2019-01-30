@@ -6,16 +6,16 @@ class AddCartItem extends Component {
 
     state = {
         quantity: 1,
-        selected: ''
+        selected: 40
 
     }
 
     handleChange = e => {
         let { name, value } = e.target
         this.setState({
-            [name]: value
+            [name]: Number(value)
         })
-        console.log("value ", value)
+        console.log("handleChange value ", value)
     }
 
 
@@ -24,7 +24,7 @@ class AddCartItem extends Component {
         console.log("len ", len)
 
         e.preventDefault();
-        const nItem = this.props.products.find(item => Number(this.state.product_id) === Number(item.id))
+        const nItem = this.props.products.find(item => Number(this.state.selected) === Number(item.id))
         const { name, quantity } = Number(parseFloat(nItem))
         let newItem = {}
         newItem.id = len + 1;
@@ -34,8 +34,6 @@ class AddCartItem extends Component {
         console.log("nItem ", nItem)
 
     }
-
-
 
     render() {
         console.log('AddItemToCart ', this)
@@ -53,7 +51,7 @@ class AddCartItem extends Component {
                 <FormGroup>
                     <form onSubmit={this.handleSubmit} >
                         <label>Quantity</label>
-                        <input type="text" onChange={this.handleChange}
+                        <input type="Number" onChange={this.handleChange}
                             value={this.state.quantity} />
                         <select onChange={this.handleChange} value={this.state.selected} name='selected'>
                             {optionTags}

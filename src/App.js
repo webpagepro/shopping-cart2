@@ -32,8 +32,10 @@ class App extends Component {
   }
 
     addItemToCart = newItem => (item => { 
-  alert("app newaitem")  
-    })
+      //this.setState({ itemsInCart: this.state.itemsInCart.concat(newItem)})
+      this.setState({ itemsInCart: [...this.state.itemsInCart, newItem]})
+      })
+    
 
   render() {
     
