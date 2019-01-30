@@ -24,20 +24,18 @@ class App extends Component {
           { id: 45, name: 'Awesome Bronze Pants', priceInCents: 399 },
           { id: 46, name: 'Intelligent Leather Clock', priceInCents: 2999 },
           { id: 47, name: 'Ergonomic Bronze Lamp', priceInCents: 40000 },
-          { id: 48, name: 'Awesome Leather Shoes', priceInCents: 3990 },
+          { id: 48, name: 'Awesome Leather Shoes', priceInCents: 3990 }
         ],
 
         basketItem: []
         
   }
 
-    addItemToCart = newItem => (purchase => { 
-      console.log("APP this.state.addItemToCart", this.state.addItemToCart)
-            this.setState({itemsInCart: this.newItem})
+    addItemToCart = newItem => (item => { 
+  alert("app newaitem")  
     })
 
   render() {
-
     
     console.log("App: addItemToCart ", this.state.addItemToCart)
     return (

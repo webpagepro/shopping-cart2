@@ -21,19 +21,19 @@ class AddCartItem extends Component {
 
     handleSubmit = e => {
         let len = (this.props.products).length;
+        console.log("len ", len)
+
         e.preventDefault();
-        this.props.addItemToCart(this.props.addItemToCart);
-        for (let i = 0; i < len; i++) {
-            console.log("this.props.products[i].name ", this.props.products[i].name)
-        }
-        const nItem = this.props.products.find(item => Number(this.props.product_id === Number(this.nItem.id)))
+        const nItem = this.props.products.find(item => Number(this.state.product_id) === Number(item.id))
         const { name, quantity } = Number(parseFloat(nItem))
         let newItem = {}
         newItem.id = len + 1;
         newItem.product = nItem;
         newItem.quantity = this.state.quantity;
         this.props.addItemToCart(newItem);
-    };
+        console.log("nItem ", nItem)
+
+    }
 
 
 
@@ -43,7 +43,7 @@ class AddCartItem extends Component {
         let optionTags = this.props.products.map(product => {
             //console.log("AddCartItem ",  this.props.addItemToCart)
             return (<option key={product.id} value={product.id}>{product.name} -  ${(product.priceInCents).toFixed(2)}</option>
-             )
+            )
 
         })
 
@@ -53,9 +53,10 @@ class AddCartItem extends Component {
                 <FormGroup>
                     <form onSubmit={this.handleSubmit} >
                         <label>Quantity</label>
-                        <input type="number" />
+                        <input type="text" onChange={this.handleChange}
+                            value={this.state.quantity} />
                         <select onChange={this.handleChange} value={this.state.selected} name='selected'>
-                           {optionTags}
+                            {optionTags}
                         </select>
                         <input type="submit" value="Submit" />
                     </form>
