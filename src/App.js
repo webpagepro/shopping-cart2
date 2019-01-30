@@ -4,7 +4,7 @@ import { Container, FormGroup } from 'reactstrap'
 import Footer from './components/Footer'
 import CartHeader from './components/CartHeader'
 import CartItems from './components/CartItems'
-//import AddCartItem from './components/AddCartItem'
+import AddCartItem from './components/AddCartItem'
 
 class App extends Component {
   state = 
@@ -25,16 +25,28 @@ class App extends Component {
           { id: 46, name: 'Intelligent Leather Clock', priceInCents: 2999 },
           { id: 47, name: 'Ergonomic Bronze Lamp', priceInCents: 40000 },
           { id: 48, name: 'Awesome Leather Shoes', priceInCents: 3990 },
-        ]
+        ],
+
+        basketItem: []
+        
   }
-  
+
+    addItemToCart = newItem => (purchase => { 
+      console.log("APP this.state.addItemToCart", this.state.addItemToCart)
+            this.setState({itemsInCart: this.newItem})
+    })
+
   render() {
+
+    
+    console.log("App: addItemToCart ", this.state.addItemToCart)
     return (
       <div className="App">
             <Container>
         <header className="App-header">
        <CartHeader/>
-       <CartItems itemsInCart={this.state.itemsInCart} products={this.state.products}/>
+       <CartItems itemsInCart={this.state.itemsInCart} />
+       <AddCartItem products={this.state.products} addItemToCart={this.addItemToCart}/>
         </header>
         <Footer copy="2018" />
         </Container>

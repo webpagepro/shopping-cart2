@@ -29,3 +29,68 @@ div.list-group-item{
   color:#fff;
   margin-bottom: 42px;
 }
+
+ input[type=submit]{
+   /* overflow: visible;
+    width: 70%;
+    margin-left:10px;
+    */
+    float:right;
+    margin: 20px 10px 0 0
+}
+
+form select {
+  overflow: visible;
+  width:90%;
+  margin: 10px;
+  margin: 60px auto 0;
+  text-align:left;
+}
+
+
+button input[type=submit]{
+  width:100px;
+  height:40px;
+  color:#fff;
+  border-radius: 4px;
+  font-weight:400;
+  float:right;
+  margin:120px 94px 20px 0;
+  position:relative;
+  top:150px;
+  right:40px; 
+}
+
+button input[type=text]{
+  width:100px;
+  height:40px;
+  color:#fff;
+  border-radius: 4px;
+  font-weight:400;
+  float:right;
+  margin:80px 4px 0 20px;
+  position:relative;
+  
+}
+
+Form{
+  min-height:560px;
+}
+
+label{
+  margin-right:8px;
+}
+
+input[type=submit] {
+  float: right;
+  margin: 120px 110px 0 0;
+  background-color:#333;
+  color:#fff;
+  border-radius: 5px;
+  font-weight:400;
+}
+
+input[type=submit]:hover {
+  background-color:#ccc;
+  color:#000;
+}

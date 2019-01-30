@@ -3,7 +3,7 @@ import CartItem from './CartItem'
 
 class CartItems extends Component {
     render() {
-
+console.log('cartitems ', this)
        let cartListItems = this.props.itemsInCart.map(item => {
             return <CartItem key={item.id} item={item} />    
         })
