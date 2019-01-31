@@ -8,12 +8,6 @@ class CartItems extends Component {
             return <CartItem key={item.id} item={item} />    
         })
 
-        let total = cartListItems.reduce((acc, item) => {
-          console.log("product cartitems:", item)
-          return acc + Number(item.priceInCents * item.quantity)
-        }, 0)
-        let cost = parseFloat(total).toFixed(2)
-        console.log('cartItemsList ', this.cartItemsList)
         return (
             <div>
                 <div className="container">
@@ -28,7 +22,7 @@ class CartItems extends Component {
     </div>
     {cartListItems}
   </div>
-  Total: ${(cost)/100} 
+
 </div>
             </div>
         );

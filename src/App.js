@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Container, FormGroup } from 'reactstrap'
+import { Container } from 'reactstrap'
 import Footer from './components/Footer'
 import CartHeader from './components/CartHeader'
 import CartItems from './components/CartItems'
@@ -25,16 +25,15 @@ class App extends Component {
           { id: 46, name: 'Intelligent Leather Clock', priceInCents: 2999 },
           { id: 47, name: 'Ergonomic Bronze Lamp', priceInCents: 40000 },
           { id: 48, name: 'Awesome Leather Shoes', priceInCents: 3990 }
-        ],
-
-        basketItem: []
+        ]
         
   }
 
-    addItemToCart = newItem => (item => { 
+    addItemToCart = newItem => { 
       //this.setState({ itemsInCart: this.state.itemsInCart.concat(newItem)})
       this.setState({ itemsInCart: [...this.state.itemsInCart, newItem]})
-      })
+      console.log("Add ", newItem)
+      }
     
 
   render() {
@@ -45,7 +44,7 @@ class App extends Component {
             <Container>
         <header className="App-header">
        <CartHeader/>
-       <CartItems itemsInCart={this.state.itemsInCart} />
+       <CartItems itemsInCart={this.state.itemsInCart} products={this.state.products}/>
        <AddCartItem products={this.state.products} addItemToCart={this.addItemToCart}/>
         </header>
         <Footer copy="2018" />
