@@ -36,7 +36,7 @@ div.list-group-item{
     margin-left:10px;
     */
     float:right;
-    margin: 20px 10px 0 0
+    margin: 0px 0px 0 0
 }
 
 form select {
@@ -48,33 +48,13 @@ form select {
 }
 
 
-button input[type=submit]{
-  width:100px;
-  height:40px;
-  color:#fff;
-  border-radius: 4px;
-  font-weight:400;
-  float:right;
-  margin:120px 94px 20px 0;
-  position:relative;
-  top:150px;
-  right:40px; 
-}
 
-button input[type=text]{
-  width:100px;
-  height:40px;
-  color:#fff;
-  border-radius: 4px;
-  font-weight:400;
-  float:right;
-  margin:80px 4px 0 20px;
-  position:relative;
-  
-}
 
-Form{
-  min-height:560px;
+
+
+form{
+  min-height:100%;
+  margin-bottom:120px;
 }
 
 label{
@@ -83,7 +63,7 @@ label{
 
 input[type=submit] {
   float: right;
-  margin: 120px 110px 0 0;
+  margin: 30px 110px 0 0;
   background-color:#333;
   color:#fff;
   border-radius: 5px;
