@@ -29,7 +29,7 @@ class App extends Component {
         
   }
 
-    addItemToCart = newItem => { 
+    addItemToCart = (newItem) => { 
       //this.setState({ itemsInCart: this.state.itemsInCart.concat(newItem)})
       this.setState({ itemsInCart: [...this.state.itemsInCart, newItem]})
       console.log("Add ", newItem)
