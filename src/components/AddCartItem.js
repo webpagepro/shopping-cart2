@@ -21,8 +21,6 @@ class AddCartItem extends Component {
      }
 
     handleSubmit = e => {
-        //let len = (this.props.products).length;
-        // console.log("this.state ", this.state)
 
         e.preventDefault();
         const nItem = {
@@ -31,18 +29,6 @@ class AddCartItem extends Component {
         }
         
         this.props.addItemToCart(nItem)
-
-        /*let nItem = {
-            product: {
-              id: this.state.selected,
-              name: "this.props.product.name",
-              priceInCents: this.props.priceInCents,
-            },
-            quantity: this.state.quantity
-          }
-          */
-        
-
     }
 
     render() {
@@ -50,7 +36,7 @@ class AddCartItem extends Component {
 
         let optionTags = this.props.products.map(product => {
             //   console.log("AddCartItem ",  this.props.addItemToCart)
-            return (<option key={product.id} value={product.id}>{product.name} -  ${(product.priceInCents).toFixed(2)}</option>
+            return (<option key={product.id} value={product.id}>{product.name} -  ${((product.priceInCents).toFixed(2)/100)}</option>
             )
         })
 

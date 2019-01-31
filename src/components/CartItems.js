@@ -7,7 +7,7 @@ class CartItems extends Component {
        let cartListItems = this.props.itemsInCart.map(item => {
             return <CartItem key={item.id} item={item} />    
         })
-
+     
         return (
             <div>
                 <div className="container">
@@ -24,6 +24,7 @@ class CartItems extends Component {
   </div>
 
 </div>
+   
             </div>
         );
     }
